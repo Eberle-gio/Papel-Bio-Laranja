@@ -1,21 +1,12 @@
-:root {
-  --verde: #0f2e13;
-  --verde-claro: #1b441e;
-  --laranja: #f68b1f;
-}
 
 body {
   scroll-behavior: smooth;
 }
 
-.navbar {
-  background-color: var(--verde) !important;
-}
-
 .hero-section {
   position: relative;
   height: 60vh;
-  background-color: var(--verde);
+  background-color: #3a9e47;
   color: #fff;
   overflow: hidden;
 }
@@ -24,7 +15,8 @@ body {
   position: absolute;
   z-index: 2;
   font-size: 2.5rem;
-  background-color: rgba(0,0,0,0.5);
+  
+  background-color: rgba(55, 185, 50, 0.5);
   padding: 0.5rem 1rem;
   border-radius: 0.3rem;
 }
