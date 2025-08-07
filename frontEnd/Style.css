@@ -1,82 +1,200 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-  scroll-behavior: smooth;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f5f5f5;
 }
 
-.hero-section {
+:root {
+  --verde: #1a3d2f;
+  --laranja: #f77f00;
+}
+
+/* Navbar */
+.navbar {
+  position: relat;
+  width: 100%;
+  background-color: var(--verde);
+  color: white;
+  padding: 15px 0;
+  z-index: 10;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: var(--laranja);
+}
+
+/* Hero com vídeo */
+.hero {
+  width: 100%;
+  height: 100vh;
   position: relative;
-  height: 60vh;
-  background-color: #3a9e47;
-  color: #fff;
-  overflow: hidden;
+
 }
 
-.hero-section .hero-title {
-  position: absolute;
-  z-index: 2;
-  font-size: 2.5rem;
-  
-  background-color: rgba(55, 185, 50, 0.5);
-  padding: 0.5rem 1rem;
-  border-radius: 0.3rem;
-}
-
-.hero-section img,
-.hero-section video {
-  position: absolute;
-  top: 0;
-  left: 0;
+.hero video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.6;
 }
 
-.section-title {
-  color: var(--laranja);
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
+.hero .overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: rgba(0,0,0,0.5);
+  padding: 20px 40px;
+  border-radius: 10px;
 }
 
-.profile-pic {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border: 4px solid var(--laranja);
+/* Sobre nós */
+.sobre {
+  padding: 60px 20px;
+  background-color: #fff;
+  text-align:initial;
 }
 
-.fase img.img-fase {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
+.sobre h2 {
+  color: var(--verde);
+  margin-bottom: 20px;
+}
+
+.participantes {
+  display: flex;
+  flex-wrap: nowrap;       /* impede quebra de linha */
+  overflow-x: auto;         /* ativa a rolagem horizontal */
+  gap: 30px;
+  padding-bottom: 10px;     /* espaço para barra de rolagem */
+  scrollbar-width: thin;    /* Firefox: deixa a barra mais fina */
+}
+
+.participantes::-webkit-scrollbar {
+  height: 8px;              /* Chrome: altura da barra */
+}
+
+.participantes::-webkit-scrollbar-thumb {
+  background-color: var(--verde); /* cor da barrinha */
+  border-radius: 10px;
+}
+
+
+.pessoa img {
+  width: 230px;
+  height: 190px;
+  border-radius: 50%;
+  object-fit: cover; /* garante que a imagem não fique distorcida */
+  display: block;
+}
+
+
+.pessoa p {
+  margin-top: 10px;
+  color: var(--verde);
+}
+
+/* Trajetória */
+.trajetoria {
+  padding: 60px 20px;
+  background-color: var(--verde);
+  color: white;
+  text-align: center;
+}
+
+.etapas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
   border: 3px solid var(--laranja);
+  margin: 0 auto 10px;
 }
 
-.gif-item {
-  background-color: var(--verde-claro);
-  padding: 10px;
+.circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* GIFs */
+.gifs {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.quadro-gifs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.quadro-gifs img {
+  width: 250px;
   border: 3px solid var(--laranja);
+  border-radius: 8px;
 }
 
+/* Responsivo */
 @media (max-width: 768px) {
-  .hero-section {
-    height: 40vh;
+  .navbar .container {
+    flex-direction: column;
+    gap: 10px;
   }
-  .hero-section .hero-title {
-    font-size: 1.8rem;
+
+  .hero .overlay {
+    padding: 15px 20px;
+    font-size: 1rem;
   }
-  .profile-pic {
+
+  .participantes,
+  .etapas,
+  .quadro-gifs {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .circle {
     width: 100px;
     height: 100px;
   }
-  .fase img.img-fase {
-    width: 60px;
-    height: 60px;
-  }
-
-  .hero-section {
-  position: relative;
-  height: 60vh; /* <= ESSA LINHA AQUI */
-  
-}
 }

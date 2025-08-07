@@ -1,113 +1,92 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <header class="hero-section">
-      <video autoplay muted loop>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Papel Bio Laranja</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="../favicon.ico" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="container">
+        <h1 class="logo">Papel Bio Laranja</h1>
+        <nav>
+          <ul>
+            <li><a href="#sobre">Sobre nós</a></li>
+            <li><a href="#trajetoria">Nossa trajetória</a></li>
+            <li><a href="#gifs">Galeria</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <video autoplay muted loop playsinline>
         <source src="../videos_imagens/video-projeto.mp4" type="video/mp4" />
       </video>
-      <h1 class="hero-title">Papel Bio Laranja</h1>
-    </header>
-    <link rel="icon" href="../favicon.ico" type="image/x-icon" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body
-    data-bs-spy="scroll"
-    data-bs-target="#navbar"
-    data-bs-offset="70"
-    tabindex="0"
-  >
-    <!-- NAVBAR -->
-    <nav
-      id="navbar"
-      class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"
-    >
-      <div class="container">
-        <a class="navbar-brand" href="#">Papel Bio Laranja</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navmenu"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navmenu">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#about">Sobre Nós</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#trajetoria">Trajetória</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#gifs">Galeria</a>
-            </li>
-          </ul>
-        </div>
+      <div class="overlay">
+        <h2>Transformando o futuro com sustentabilidade</h2>
       </div>
-    </nav>
+    </section>
 
-    <!-- HEADER COM VÍDEO -->
-    <header
-      class="hero-section text-white d-flex align-items-center justify-content-center"
-    >
-      <video autoplay muted loop class="w-100 h-100 object-fit-cover">
-        <source src="videos_imagens/video_projeto.mov" type="video/mp4" />
-      </video>
-      <h1 class="hero-title">Papel Bio Laranja</h1>
-    </header>
-
-    <!-- SOBRE NÓS -->
-    <section id="about" class="py-5 text-center">
-      <div class="container">
-        <h2 class="section-title">Sobre Nós</h2>
-        <div class="row justify-content-center">
-          <!-- Repita para cada membro -->
-          <div class="col-6 col-md-3 mb-4">
-            <img
-              src="participante1.jpg"
-              class="rounded-circle img-fluid profile-pic"
-              alt="Participante 1"
-            />
-            <h5 class="mt-2">João Silva</h5>
-          </div>
+    <section id="sobre" class="sobre">
+      <h2>Sobre nós</h2>
+      <div class="participantes">
+        <div class="pessoa">
+          <img src="../videos_imagens/Beatriz.jpg" alt="Beatriz" />
+          <p>Pessoa 1</p>
+        </div>
+        <div class="pessoa">
+          <img src="../videos_imagens/foto eu.jpg" alt="Giovana" />
+          <p>Pessoa 2</p>
+        </div>
+        <div class="pessoa">
+          <img src="img3.jpg" alt="Pessoa 3" />
+          <p>Pessoa 3</p>
+        </div>
+        <div class="pessoa">
+          <img src="img4.jpg" alt="Pessoa 4" />
+          <p>Pessoa 4</p>
+        </div>
+        <div class="pessoa">
+          <img src="img5.jpg" alt="Pessoa 5" />
+          <p>Pessoa 5</p>
         </div>
       </div>
     </section>
 
-    <!-- TRAJETÓRIA -->
-    <section id="trajetoria" class="py-5 text-center bg-secondary">
-      <div class="container">
-        <h2 class="section-title text-white">Nossa Trajetória</h2>
-        <div class="d-flex flex-wrap justify-content-center mt-4">
-          <div class="fase mx-3 mb-4">
-            <img src="fase1.jpg" class="rounded-circle img-fase" alt="Fase 1" />
-            <p class="mt-2 text-white">Início</p>
+    <section id="trajetoria" class="trajetoria">
+      <h2>Nossa trajetória</h2>
+      <div class="etapas">
+        <div class="etapa">
+          <div class="circle">
+            <img src="videos_imagens/etapa1.jpg" alt="" />
           </div>
+          <p>Início</p>
+        </div>
+        <div class="etapa">
+          <div class="circle">
+            <img src="videos_imagens/etapa2.jpg" alt="" />
+          </div>
+          <p>Pesquisa</p>
+        </div>
+        <div class="etapa">
+          <div class="circle">
+            <img src="videos_imagens/etapa3.jpg" alt="" />
+          </div>
+          <p>Prototipagem</p>
         </div>
       </div>
     </section>
 
-    <!-- GALERIA DE GIFS -->
-    <section id="gifs" class="py-5 text-center">
-      <div class="container">
-        <h2 class="section-title">Galeria de GIFs</h2>
-        <div class="row g-4 mt-3">
-          <div class="col-6 col-md-4">
-            <div class="gif-item">
-              <img src="gif1.gif" class="img-fluid rounded" alt="GIF 1" />
-            </div>
-          </div>
-        </div>
+    <section id="gifs" class="gifs">
+      <h2>Galeria</h2>
+      <div class="quadro-gifs">
+        <img src="videos_imagens/gif1.gif" alt="gif 1" />
+        <img src="videos_imagens/gif2.gif" alt="gif 2" />
+        <img src="videos_imagens/gif3.gif" alt="gif 3" />
       </div>
     </section>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
