@@ -31,6 +31,11 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+  font-size: 20px;
+}
+
+.navbar .container h1{
+  font-size: 40px;
 }
 
 .navbar .logo {
@@ -108,19 +113,27 @@ body {
   border-radius: 10px;
 }
 
+.sobre h2{
+  font-size: 30px;
+  text-align:center;
+}
+
 
 .pessoa img {
-  width: 230px;
-  height: 190px;
-  border-radius: 50%;
+  width: 240px;
+  height: 200px;
+  border-radius: 10px;
   object-fit: cover; /* garante que a imagem não fique distorcida */
   display: block;
+  margin-left: 110%;
 }
 
 
 .pessoa p {
   margin-top: 10px;
   color: var(--verde);
+  margin-left: 140%;
+
 }
 
 /* Trajetória */
@@ -129,6 +142,10 @@ body {
   background-color: var(--verde);
   color: white;
   text-align: center;
+}
+
+.explicacao{
+  font-size: large;
 }
 
 .etapas {
@@ -197,4 +214,31 @@ body {
     width: 100px;
     height: 100px;
   }
+}
+
+.patrocinadores {
+  background-color: var(--laranja);
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.patrocinadores span {
+  color: white;
+  font-weight: bold;
+}
+
+.patrocinadores img {
+  height: 40px;
+  object-fit: contain;
+}
+
+footer {
+  background-color: #222;
+  color: white;
+  padding: 15px 0;
+  text-align: center;
+  font-size: 14px;
 }
