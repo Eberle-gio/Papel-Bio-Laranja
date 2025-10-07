@@ -5,87 +5,25 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background-color: #f5f5f5;
-}
-
+/* Variáveis de cores */
 :root {
   --verde: #1a3d2f;
   --laranja: #f77f00;
+  --bg: #f5f5f5;
 }
 
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 15px; /* espaço entre logo e texto */
+/* Body */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: var(--bg);
 }
 
-.logo-img {
-  height: 140px; /* ajusta o tamanho da logo */
-  width: auto;  /* mantém proporção */
-}
-
-.video-wrapper {
-  background-color: var(--laranja); /* fundo embaixo do vídeo */
-  padding: 0 0 60px 0; /* só sobra embaixo */
-  display: flex;
-  justify-content: center;
-}
-
-.video-container {
-  position: relative;
-  width: 80%;           /* sobra nas laterais */
-  max-width: 900px;
-  padding-bottom: 56.25%; /* proporção 16:9 */
-  height: 0;
-  overflow: hidden;
-
-
-}
-
-/* iframe preenchendo o container */
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-
-  z-index: 1;
-}
-
-/* faixas laranja sobre o vídeo */
-.faixa-top,
-.faixa-bottom {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 30px;
-  background-color: var(--laranja);
-  z-index: 2;
-}
-
-.faixa-top {
-  top: 0;
-  height: 110px;
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
-}
-
-.faixa-bottom {
-  bottom: 0;
-  height: 110px;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius:0px;
-}
-
+/* Navbar */
 .navbar {
-  position: relat;
+  position: relative;
   width: 100%;
-  background-color:#012a31;
+  background-color: #012a31;
   color: white;
   padding: 15px 0;
   z-index: 10;
@@ -95,16 +33,18 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  font-size: 20px;
+  padding: 0 20px;
 }
 
-.navbar .container h1{
-  font-size: 40px;
+.navbar .logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
-.navbar .logo {
-  font-size: 1.5rem;
+.logo-img {
+  height: 140px;
+  width: auto;
 }
 
 .navbar ul {
@@ -123,102 +63,121 @@ body {
   color: var(--laranja);
 }
 
-.video-container {
-  position: relative;
-  padding-bottom: 56.25%; /* Proporção 16:9 */
-  height: 0;
-  overflow: hidden;
-  max-width: 100%
-
+/* Vídeo */
+.video-wrapper {
+  background-color: var(--laranja);
+  padding: 0 0 0px 0;
+  display: flex;
+  justify-content: center;
 }
 
-/* Faz o iframe se ajustar */
+.video-container {
+  position: relative;
+  width: 80%;
+  max-width: 100%;
+  padding-bottom: 50.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+}
+
 .video-container iframe {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 90%;
   border: none;
-
+  z-index: 1;
 }
 
-/* Hero com vídeo */
-.hero {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-
-}
-
-.hero video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero .overlay {
+/* faixas laranjas sobre o vídeo */
+.faixa-top,
+.faixa-bottom {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  background-color: rgba(0,0,0,0.5);
-  padding: 20px 40px;
-  border-radius: 10px;
+  left: 0;
+  width: 100%;
+  background-color: var(--laranja);
+  z-index: 2;
+}
+
+.faixa-top {
+  top: 0;
+  height: 5%; /* antes era 80px, agora em % do container */
+}
+
+.faixa-bottom {
+  bottom: 0;
+  height: 5%; /* antes era 80px, agora em % do container */
+}
+
+/* Ajuste específico para telas pequenas */
+@media (max-width: 768px) {
+  .faixa-top,
+  .faixa-bottom {
+    height: 11%; /* aumenta um pouco para compensar a tela menor */
+  }
 }
 
 /* Sobre nós */
 .sobre {
   padding: 60px 20px;
   background-color: #fff;
-  text-align:initial;
+  text-align: center;
 }
 
 .sobre h2 {
   color: var(--verde);
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  font-size: 30px;
 }
 
+/* Participantes - cards circulares */
 .participantes {
   display: flex;
-  flex-wrap: nowrap;       /* impede quebra de linha */
-  overflow-x: auto;         /* ativa a rolagem horizontal */
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 30px;
-  padding-bottom: 10px;     /* espaço para barra de rolagem */
-  scrollbar-width: thin;    /* Firefox: deixa a barra mais fina */
+  align-items: flex-start;
 }
 
-.participantes::-webkit-scrollbar {
-  height: 8px;              /* Chrome: altura da barra */
+.pessoa {
+  --y: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;        
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
+  cursor: pointer;
 }
-
-.participantes::-webkit-scrollbar-thumb {
-  background-color: var(--verde); /* cor da barrinha */
-  border-radius: 10px;
-}
-
-.sobre h2{
-  font-size: 30px;
-  text-align:center;
-}
-
 
 .pessoa img {
-  width: 240px;
-  height: 200px;
-  border-radius: 10px;
-  object-fit: cover; /* garante que a imagem não fique distorcida */
-  display: block;
-  margin-left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
 }
 
+.pessoa:hover {
+  --y: -10px;
+  transform: translate3d(0, var(--y), 0);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  border: 2px solid var(--laranja);
+}
 
-.pessoa p {
+.pessoa:hover img {
+  transform: scale(1.05);
+}
+
+/* Nome fora do círculo */
+.participantes p {
   margin-top: 10px;
+  text-align: center;
   color: var(--verde);
-  margin-left: 85%;
-
+  font-weight: bold;
+  width: 200px; /* alinha o texto com o círculo */
 }
 
 /* Trajetória */
@@ -229,8 +188,14 @@ body {
   text-align: center;
 }
 
-.explicacao{
+.trajetoria h2 {
+  margin-bottom: 30px;
+}
+
+.explicacao {
   font-size: large;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .etapas {
@@ -271,24 +236,42 @@ body {
 }
 
 .gifs .quadro-gifs img {
-  border: 5px solid orange;
+  border: 5px solid var(--laranja);
   border-radius: 8px;
   width: 200px;
   height: auto;
   object-fit: cover;
 }
 
+/* Patrocinadores */
+.patrocinadores {
+  background-color: var(--laranja);
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.patrocinadores img {
+  height: 40px;
+  object-fit: contain;
+}
+
+/* Footer */
+footer {
+  background-color: #222;
+  color: white;
+  padding: 15px 0;
+  text-align: center;
+  font-size: 14px;
+}
 
 /* Responsivo */
 @media (max-width: 768px) {
   .navbar .container {
     flex-direction: column;
     gap: 10px;
-  }
-
-  .hero .overlay {
-    padding: 15px 20px;
-    font-size: 1rem;
   }
 
   .participantes,
@@ -299,34 +282,16 @@ body {
   }
 
   .circle {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
   }
-}
 
-.patrocinadores {
-  background-color: var(--laranja);
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
+  .pessoa {
+    width: 150px;
+    height: 150px;
+  }
 
-.patrocinadores span {
-  color: white;
-  font-weight: bold;
-}
-
-.patrocinadores img {
-  height: 40px;
-  object-fit: contain;
-}
-
-footer {
-  background-color: #222;
-  color: white;
-  padding: 15px 0;
-  text-align: center;
-  font-size: 14px;
+  .participantes p {
+    width: 150px;
+  }
 }
